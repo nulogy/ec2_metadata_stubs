@@ -1,0 +1,29 @@
+image: nulogy/kitchen-gitlab-ci-runner
+
+variables:
+  NULOGY_KITCHEN_DRIVER: ec2
+  BERKSHELF_CONFIG: .ci.berkshelf.json
+
+before_script:
+  - mkdir -p ~/.aws
+  - cp /secrets/kitchen-aws-config ~/.aws/config
+  - ln ~/.aws/config ~/.aws/credentials
+
+stages:
+  - lint
+  - kitchen
+
+rubocop:
+  stage: lint
+  script:
+    - rubocop
+
+foodcritic:
+  stage: lint
+  script:
+    - foodcritic --progress .
+
+kitchen:
+  stage: kitchen
+  script:
+    - kitchen test -d always

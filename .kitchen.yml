@@ -1,0 +1,32 @@
+---
+driver:
+  name: vagrant
+  customize:
+    cableconnected1: "on" # works around a networking problem introduced in Virtualbox 5.1
+
+transport:
+  ssh_key: .kitchen/docker_id_rsa
+  forward_agent: true
+
+provisioner:
+  name: chef_solo
+  require_chef_omnibus: 12
+  environments_path: test/fixtures/environments
+  client_rb:
+    environment: ec2_metadata_stubs-test
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-18.04
+
+suites:
+  - name: default
+    run_list:
+      - recipe[ec2_metadata_stubs-test::setup]
+      - recipe[ec2_metadata_stubs::default]
+    attributes:
+      ec2_metadata_stubs:
+        stubs:
+          latest/user-data: "abcd1234"

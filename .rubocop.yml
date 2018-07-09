@@ -1,0 +1,35 @@
+AllCops:
+  TargetRubyVersion: 2.1
+  Exclude:
+    - 'berks-cookbooks/**/*'
+
+Style/HashSyntax:
+  Description: >-
+                 Prefer Ruby 1.9 hash syntax { a: 1, b: 2 } over 1.8 syntax
+                 { :a => 1, :b => 2 }.
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#hash-literals'
+  Enabled: true
+
+Style/StringLiterals:
+  Description: 'Checks if uses of quotes match the configured preference.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#consistent-string-literals'
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+  Enabled: true
+
+Metrics/LineLength:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/LeadingCommentSpace:
+  Enabled: false
+
+Style/IndentArray:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false

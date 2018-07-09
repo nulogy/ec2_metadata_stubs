@@ -1,0 +1,10 @@
+name "ec2_metadata_stubs"
+maintainer "Nulogy Corporation (Justin Fitzsimmons)"
+maintainer_email "justinf@nulogy.com"
+license "MIT"
+description "ec2_metadata_stubs"
+version "0.1.0"
+source_url "https://github.com/nulogy/ec2_metadata_stubs"
+issues_url "https://github.com/nulogy/ec2_metadata_stubs/issues"
+
+depends "poise-service"

@@ -1,0 +1,14 @@
+DEPENDENCIES
+  ec2_metadata_stubs
+    path: .
+    metadata: true
+  ec2_metadata_stubs-test
+    path: test/fixtures/cookbooks/ec2_metadata_stubs-test
+
+GRAPH
+  ec2_metadata_stubs (0.1.0)
+    poise-service (>= 0.0.0)
+  ec2_metadata_stubs-test (0.1.0)
+  poise (2.8.1)
+  poise-service (1.5.2)
+    poise (~> 2.0)

@@ -1,0 +1,14 @@
+{
+    "name": "ec2_metadata_stubs-test",
+    "description": "My Chef environment",
+    "cookbook_versions": {
+
+    },
+    "json_class": "Chef::Environment",
+    "chef_type": "environment",
+    "default_attributes": {
+    },
+    "override_attributes": {
+
+    }
+}
